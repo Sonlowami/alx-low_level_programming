@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -march=x86-64 $CFILE -o main.c
+gcc -S -march=x86-64 $CFILE -o 100-main.s
