@@ -1,0 +1,1 @@
+This repository contain c programs related to project 0x01. C - Variables, if, else and while statements in the ALX Software Engineering Program.
