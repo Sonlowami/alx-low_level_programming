@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include "main.h"
 
+
+void print_alphabet(void);
+
 /**
  * main - serve as entry point for the compiler
  *
  * Return: 0
  */
 
-void print_alphabet(void);
 
 int main(void)
 {
