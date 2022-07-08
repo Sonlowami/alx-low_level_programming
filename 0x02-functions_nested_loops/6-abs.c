@@ -9,5 +9,5 @@
 int _abs(int x)
 {
 	if (x < -1)
-		return ("%d", x * (-1));
+		return (x * (-1));
 }
