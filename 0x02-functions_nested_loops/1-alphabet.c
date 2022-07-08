@@ -17,15 +17,4 @@ void print_alphabet(void)
 	_putchar('\n');
 }
 
-/**
- * main - serve as entry point for the compiler
- *
- * Return: 0
- */
-
-
-/*int main(void)
-{
-	print_alphabet();
 	return (0);
-}*/
