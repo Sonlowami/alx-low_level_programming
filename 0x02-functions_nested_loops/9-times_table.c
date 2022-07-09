@@ -16,13 +16,14 @@ void times_table(void)
 			/*format the output*/
 			if (c / 10 != 0)
 				_putchar('0' + (c / 10));
-			if ((c == 0) || (c % 9 != 0))
+
+			if (j != 9)
 			{
 			_putchar('0' + (c % 10));
 			_putchar(',');
 			_putchar(' ');
 			}
-			else if ((c != 0) && (c % 9 == 0) && (i == 9 || j == 9))
+			else if (j == 9)
 			{
 				_putchar('0' + (c % 10));
 				_putchar('\n');
