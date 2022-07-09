@@ -22,12 +22,12 @@ void jack_bauer(void)
 				else if (i < 20 && i > 10)
 				{
 					_putchar('1');
-					_putchar('0' + (x % 10));
+					_putchar('0' + (i % 10));
 				}
 				else
 				{
 					_putchar('2');
-					_putchar('0' + (x % 10));
+					_putchar('0' + (i % 10));
 				}
 				_putchar(':');
 				_putchar('0' + j);
