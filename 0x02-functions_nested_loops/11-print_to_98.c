@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * print_to_98 - print natural numbers from a point up to 98
+ * @n: the integer starting point
+ */
 void print_to_98(int n)
 {
 	if (n <= 98 && n >= 0)
@@ -9,15 +13,23 @@ void print_to_98(int n)
 	else if (n > 98)
 		print_aboves(n);
 }
+
+/**
+ * print_aboves - print all numbers from a point
+ * up to 98 in descending order
+ * @n: starting integer
+ */
 void print_aboves(int n)
 {
 	/*first print numbers above 100*/
-	for (n; n > 99; n--)
+	int i;
+
+	for (i = n; i > 99; i--)
 	{
-		_putchar('0' + n / 100);
-		_putchar ('0' + (n % 100) / 10);
-		_putchar('0' + n % 10);
-		
+		_putchar('0' + i / 100);
+		_putchar ('0' + (i % 100) / 10);
+		_putchar('0' + i % 10);
+
 		_putchar(',');
 		_putchar(' ');
 	}
@@ -31,6 +43,7 @@ void print_aboves(int n)
 	_putchar('8');
 	_putchar(',');
 	_putchar(' ');
+	_putchar('\n');
 }
 
 /**
@@ -41,21 +54,23 @@ void print_negatives(int n)
 
 	{
 		/* first print numbers up to zero */
-		for (n; n < 0; n++)
+		int i;
+
+		for (i = n; i < 0; i++)
 		{
 			_putchar('-');
 			/*ignore the first zero*/
-			if (-n / 10 != 0)
-				_putchar ('0' + (-n / 10));
-			_putchar ('0' + (-n % 10));
+			if (-i / 10 != 0)
+				_putchar ('0' + (-i / 10));
+			_putchar ('0' + (-i % 10));
 
 			/* add separators*/
 			_putchar(',');
 			_putchar(' ');
 		}
 		/* then print all numbers after 0*/
-		n = 0;
-		print_positives(n);
+		i = 0;
+		print_positives(i);
 	}
 
 /**
@@ -64,16 +79,18 @@ void print_negatives(int n)
  */
 void print_positives(int n)
 {
+	int j;
 
-	for (n; n < 98; n++)
+	for (j = n; j <= 98; j++)
 	{
 		/* ignore the fromt zero*/
-		if (n / 10 != 0)
-			_putchar('0' + n / 10);
-		_putchar('0' + n % 10);
+		if (j / 10 != 0)
+			_putchar('0' + j / 10);
+		_putchar('0' + j % 10);
 
 		/* add separators*/
 		_putchar(',');
 		_putchar(' ');
 	}
+	_putchar('\n');
 }
