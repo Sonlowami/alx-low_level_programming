@@ -41,8 +41,6 @@ void print_aboves(int n)
 
 	_putchar('9');
 	_putchar('8');
-	_putchar(',');
-	_putchar(' ');
 	_putchar('\n');
 }
 
@@ -81,7 +79,7 @@ void print_positives(int n)
 {
 	int j;
 
-	for (j = n; j <= 98; j++)
+	for (j = n; j < 98; j++)
 	{
 		/* ignore the fromt zero*/
 		if (j / 10 != 0)
@@ -92,5 +90,7 @@ void print_positives(int n)
 		_putchar(',');
 		_putchar(' ');
 	}
+	_putchar('9');
+	_putchar('8');
 	_putchar('\n');
 }
