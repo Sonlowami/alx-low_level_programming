@@ -1,0 +1,2 @@
+This directory contain files for project 0X04. C - More functions and Nested Loops in the Section of Low-Level Programming, in ALX Software Engineering training.
+Programs here have been tested on a local environment and generalrily work well. But this comes with no guarantee. Use them at your own risk!
