@@ -24,7 +24,10 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
-		printf("%c", ' ');
+
+		/*add a space after each output, except the last*/
+		if (i != 100)
+			printf("%c", ' ');
 	}
 	printf("%c", '\n');
 	return (0);
