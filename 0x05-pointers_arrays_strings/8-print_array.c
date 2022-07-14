@@ -12,6 +12,10 @@ void print_array(int *a, int n)
 {
 	int i;
 
+	i = 0;
+
+	if (i >= n)
+		printf("\n");
 	for (i = 0; i < n; i++)
 	{
 		if (i < n - 1)
@@ -19,6 +23,4 @@ void print_array(int *a, int n)
 		else
 			printf("%d\n", a[i]);
 	}
-	if (i >= n)
-		printf("\n");
 }
