@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_rev - prints a string in the reverse order
@@ -6,17 +7,15 @@
  */
 void print_rev(char *s)
 {
-	int i;
+	int i, j;
 
 	i = 0;
-	while (*(s + i) != '\0')
+	while (s[i] != '\0')
 	{
 		i++;
 	}
-	while (i >= 0)
-	{
-		_putchar(*(s + (i - 1)));
-		i--;
-	}
+
+	for (j = i - 1; j >= 0; j--)
+		_putchar(s[j]);
 	_putchar('\n');
 }
