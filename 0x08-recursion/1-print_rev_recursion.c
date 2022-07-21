@@ -9,7 +9,7 @@
 void print_rev(char *s, int i)
 {
 	if (i == 0)
-		_putchar(s[0]);
+		;
 	else
 	{
 		_putchar(s[i - 1]);
