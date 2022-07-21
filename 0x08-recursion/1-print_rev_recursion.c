@@ -18,17 +18,37 @@ void print_rev(char *s, int i)
 	}
 }
 /**
+ * len_recourse - find length of string
+ * @s: pointer to the string
+ * @len: the length of array of characters
+ *
+ * Return: int len
+ */
+int len_recourse(char *s, int len)
+{
+	if (*s != '\0')
+	{
+		len++;
+		s++;
+		return (len_recourse(s, len));
+	}
+
+
+	else
+	{
+		return (len);
+	}
+}
+/**
  * _print_rev_recursion - print a string in reverse recursively
  * @s: string to print
  */
 
 void _print_rev_recursion(char *s)
 {
-	int i;
+	int i, x;
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
+	x = 0;
+	i = len_recourse(s, x);
 	print_rev(s, i);
 }
-
-
