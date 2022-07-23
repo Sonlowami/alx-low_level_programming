@@ -8,7 +8,7 @@ void print_to_98(int n)
 {
 	if (n <= 98 && n >= 0)
 		print_positives(n);
-	else if (n <= 98 && n < 0)
+	else if (n <= 98 && n >= -99)
 		print_negatives(n);
 	else if (n > 98)
 		print_aboves(n);
@@ -28,9 +28,9 @@ void print_belows(int n)
 	for (i = n; i < -99; i++)
 	{
 		_putchar('-');
-		_putchar('0' + i / 100);
-		_putchar ('0' + (i % 100) / 10);
-		_putchar('0' + i % 10);
+		_putchar('0' + -1 * (i / 100));
+		_putchar ('0' + (-i % 100) / 10);
+		_putchar('0' + (-i % 10));
 
 		_putchar(',');
 		_putchar(' ');
