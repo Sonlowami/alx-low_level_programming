@@ -29,3 +29,5 @@ void print_positives(int n);
 void print_negatives(int n);
 
 void print_aboves(int n);
+
+void print_belows(int n);

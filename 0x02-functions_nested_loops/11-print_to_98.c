@@ -12,8 +12,31 @@ void print_to_98(int n)
 		print_negatives(n);
 	else if (n > 98)
 		print_aboves(n);
+	else if (n < -98)
+		print_belows(n);
 }
 
+/**
+ * print_belows - print all numbers below -98
+ * @n: the strting point
+ */
+void print_belows(int n)
+{
+
+	int i;
+
+	for (i = n; i < -99; i++)
+	{
+		_putchar('-');
+		_putchar('0' + i / 100);
+		_putchar ('0' + (i % 100) / 10);
+		_putchar('0' + i % 10);
+
+		_putchar(',');
+		_putchar(' ');
+	}
+	print_negatives(-99);
+}
 /**
  * print_aboves - print all numbers from a point
  * up to 98 in descending order
