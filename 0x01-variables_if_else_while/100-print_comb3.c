@@ -25,7 +25,7 @@ void print_chars(int i, int j, int n)
  */
 int main(void)
 {
-	int x[200];
+	double x[200];
 	int i, j, filled, n1, n2;
 	int state = OUT;
 
