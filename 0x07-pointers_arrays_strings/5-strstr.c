@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include <stdio.h>
 
 /**
  * compare - compare two character array
@@ -42,6 +41,8 @@ char *_strstr(char *haystack, char *needle)
 			if (r == 1)
 				return (haystack + i);
 		}
+		if (*needle == '\0')
+			return (haystack);
 	}
 	return (NULL);
 }
