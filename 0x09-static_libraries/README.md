@@ -1,0 +1,1 @@
+This directory contain static libraries for C programs for Project 0X09 - Static Libraries in ALX Software Engineering 
