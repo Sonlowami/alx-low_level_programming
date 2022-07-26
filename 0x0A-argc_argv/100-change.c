@@ -13,14 +13,13 @@ int main(int argc, char **argv)
 	int i, coins, n;
 	int c[5] = {25, 10, 5, 2, 1};
 
-	n = atoi(argv[1]);
-	coins = 0;
-
 	if (argc != 2)
 	{
-		printf("Errror\n");
+		printf("Error\n");
 		return (1);
 	}
+	n = atoi(argv[1]);
+	coins = 0;
 
 	for (i = 0; i < 5; i++)
 	{
