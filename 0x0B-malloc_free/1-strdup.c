@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 /**
  * _strdup - copy a string and return a pointer
  * to a memory location of that copy
@@ -11,11 +12,11 @@ char *_strdup(char *str)
 {
 	unsigned long int i;
 
-	char *p = (char *) malloc(sizeof(str));
+	char *p = (char *) malloc(sizeof(*str) * strlen(str));
 
 	if (p == NULL)
 		return (0);
-	for (i = 0; i < sizeof(str); i++)
+	for (i = 0; i < strlen(str); i++)
 	{
 		p[i] = str[i];
 	}
