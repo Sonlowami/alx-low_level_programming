@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - print a combination of two unique digits
+ * main - print combinations of three unique digits
  *
  * Return: 0
  */
