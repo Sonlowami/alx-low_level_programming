@@ -18,7 +18,8 @@ void init_dog(struct dog *d, char *name, float age,
 void print_dog(struct dog *d);
 
 /**
- * og_t: another name of type dog
+ * dog_t - Typedef for struct dog
+ *
  */
 typedef struct dog dog_t;
 #endif
