@@ -1,0 +1,2 @@
+This directory contain programs that uses function pointers to do some tasks.
+Each function explainsthe task it solve. They are part of the project 0x0F. C - Function Pointers in ALX Software Engineering Program by ALX.
