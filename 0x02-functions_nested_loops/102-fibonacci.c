@@ -1,20 +1,4 @@
 #include <stdio.h>
-
-/**
- * fib - find fibunocci number
- * @n: number of fibs
- *
- * Return: integer representing the fibunnoocci number
- */
-int fib(int n)
-{
-	if (n == 0)
-		return (0);
-	else if (n == 1)
-		return (1);
-	else
-		return (fib(n - 1) + fib(n - 2));
-}
 /**
  * main - print the first 50 fib numbers
  *
@@ -22,12 +6,18 @@ int fib(int n)
  */
 int main(void)
 {
-	int i;
+	long int i, j, k, next;
 
-	for (i = 2; i < 52; i++)
+	i = j = 1;
+	k = 2;
+	for (; i <= 50; i++)
 	{
-		printf("%d, ", fib(i));
+		printf("%ld ", j);
+
+		next = j + k;
+		j = k;
+		k = next;
 	}
-	putchar('\n');
 	return (0);
 }
+
