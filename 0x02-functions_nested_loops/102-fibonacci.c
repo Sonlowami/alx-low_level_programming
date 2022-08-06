@@ -12,10 +12,10 @@ int main(void)
 	k = 2;
 	for (; i <= 50; i++)
 	{
-		printf("%ld,", j);
+		printf("%ld", j);
 
 		if (j != 20365011074)
-			printf(" ");
+			printf(", ");
 
 		next = j + k;
 		j = k;
