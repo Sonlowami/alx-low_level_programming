@@ -1,5 +1,6 @@
 #include "3-calc.h"
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 /**
  * main - calculate numbers
@@ -16,16 +17,16 @@ int main(int argc, char **argv)
 	if (argc != 4)
 	{
 		/*many or less arguments*/
-		printf("Error!\n");
+		printf("Error\n");
 		exit(98);
 	}
 
-	else if (*(argv[2]) != '+' && *(argv[2]) != '-'
+	else if ((*(argv[2]) != '+' && *(argv[2]) != '-'
 			&& *(argv[2]) != '*' && *(argv[2]) != '/'
-			&& *(argv[2]) != '%')
+			&& *(argv[2]) != '%') || argv[2][1] != '\0')
 	{
 		/*unsupported operation*/
-		printf("Error!\n");
+		printf("Error\n");
 		exit(99);
 	}
 
@@ -34,7 +35,7 @@ int main(int argc, char **argv)
 			*(argv[3]) == '0')
 	{
 		/*the user is trying to divide by 0*/
-		printf("Error!\n");
+		printf("Error\n");
 		exit(100);
 	}
 	f = get_op_func(argv[2]);
