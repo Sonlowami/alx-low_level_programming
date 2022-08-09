@@ -8,12 +8,10 @@ void print_all(const char * const format, ...)
 {
 	int i;
 	va_list any;
-	char *spr = "";
+	char *str, *spr = "";
 
 	if (format != NULL)
 	{
-		char *str;
-
 		va_start(any, format);
 		i = 0;
 		while (format[i] != '\0')
@@ -32,9 +30,11 @@ void print_all(const char * const format, ...)
 				case 's':
 					str = va_arg(any, char *);
 					if (str != NULL)
+					{
 						printf("%s%s", spr, str);
-					else
-						printf("%snil", spr);
+						break;
+					}
+					printf("%snil", spr);
 					break;
 				default:
 					break;
