@@ -10,7 +10,7 @@ int main(void)
 
 	i = j = 1;
 	k = 2;
-	for (; i <= 50; i++)
+	for (; i <= 98; i++)
 	{
 		printf("%ld", j);
 
