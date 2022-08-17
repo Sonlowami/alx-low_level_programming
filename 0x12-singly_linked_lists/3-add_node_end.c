@@ -1,9 +1,11 @@
 #include "lists.h"
 /**
- * add_node_end- append a node to the linked list
+ * add_node_end - append a node to the linked list
  * @head: pointer to pointer to first element of
  * the linked list
  * @str: the string element of the node
+ *
+ * Return: pointer to the lat added node
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
