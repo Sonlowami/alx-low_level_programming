@@ -29,7 +29,7 @@ size_t print_listint_safe(const listint_t *head)
 {
 	int flag, i;
 	size_t count;
-	const listint_t *node, *passed_nodes[100];
+	const listint_t *node, *passed_nodes[200];
 
 	if (!head)
 		return (0);
