@@ -41,11 +41,16 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			printf("[%p] %i\n", (void *)node, node->n);
 			count++;
-			while (i < 100)
+			if (i < 100)
 			{
 				passed_nodes[i] = node;
 				i++;
 			}
+		}
+		else
+		{
+			printf("->[%p] %i\n", (void *)node, node->n);
+			break;
 		}
 	}
 	return (count);
