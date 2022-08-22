@@ -42,5 +42,5 @@ listint_t *reverse_listint(listint_t **head);
 
 size_t print_listint_safe(const listint_t *head);
 
-int is_visited(const listint_t **, const listint_t *);
+int check_repeat(const listint_t **seen, const listint_t *node);
 #endif
