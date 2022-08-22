@@ -47,4 +47,6 @@ int check_repeat(const listint_t **seen, const listint_t *node);
 int check_repeat2(listint_t **seen, listint_t *node);
 
 size_t free_listint_safe(listint_t **h);
+
+listint_t *find_listint_loop(listint_t *head);
 #endif
