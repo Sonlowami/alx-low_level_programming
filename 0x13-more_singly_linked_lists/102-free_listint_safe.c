@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * check_repeat - check if a node has been printed already
+ * check_repeat2 - check if a node has been printed already
  * @seen: array of pointers to encountered nodes
  * @node: the node pointer to compare
  *
@@ -30,7 +30,7 @@ size_t free_listint_safe(listint_t **h)
 	int flag, i;
 	size_t count;
 	listint_t *node, *node_b, *seen_nodes[150];
-	
+
 	if (!h)
 		return (0);
 	for (count = 0, i = 0, node = *h; node; node = node_b)
