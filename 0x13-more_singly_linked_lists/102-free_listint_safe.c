@@ -33,7 +33,7 @@ size_t free_listint_safe(listint_t **h)
 	
 	if (!h)
 		return (0);
-	for (count = 0, node = *h; node; node = node_b)
+	for (count = 0, i = 0, node = *h; node; node = node_b)
 	{
 		flag = check_repeat2(seen_nodes, node);
 		if (!flag)
