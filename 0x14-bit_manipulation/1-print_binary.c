@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	int i, state;
 	unsigned long int shifted;
 
-	i = MAX_BITS;
+	i = MAX_BITS - 1;
 	state = OUT;
 
 	for (; i >= 0; i--)
