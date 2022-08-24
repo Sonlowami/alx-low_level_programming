@@ -11,7 +11,7 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int shifted;
 
-	if (index > sizeof(long int) * 8)
+	if (index > MAX_BITS)
 		return (-1);
 	shifted = n >> index;
 	if (shifted & 1)
