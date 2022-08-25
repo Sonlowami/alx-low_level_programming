@@ -1,0 +1,8 @@
+#Ignore all testing files
+*main.c
+
+#ignore all executable files
+*.out
+
+#ignore textfiles
+Resqu*
