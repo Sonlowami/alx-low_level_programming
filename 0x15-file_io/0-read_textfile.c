@@ -23,12 +23,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	i = read(n, str, letters);
+	close(n);
 	if (i == -1)
 	{
 		free(str);
 		return (0);
 	}
-	count = write(1, str, i);
+	str[i] = '\0';
+	count = write(STDOUT_FILENO, str, i);
 	if (count == -1)
 	{
 		free(str);
