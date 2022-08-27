@@ -8,10 +8,20 @@ void copy(char *file_from, char *file_to)
 {
 	int fd, fd2, rd, wrote;
 	int closed, closed2;
-	char *buffer = malloc(sizeof(char) * 1024);
+	char buffer[1024];
 
 	fd = open(file_from, O_RDONLY);
 	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 00664);
+	if (fd == -1)
+	{
+		dprintf(2, "Error: can't read from file %s\n", file_from);
+		exit(98);
+	}
+	if (fd2 == -1)
+	{
+		dprintf(2, "Error: can't write to file %s\n", file_to);
+		exit(99);
+	}
 
 	rd = read(fd, buffer, 1024);
 	if (rd == -1)
