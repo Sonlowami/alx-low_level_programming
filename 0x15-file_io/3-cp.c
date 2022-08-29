@@ -11,29 +11,32 @@ void copy(char *file_from, char *file_to)
 	char buffer[1024];
 
 	fd = open(file_from, O_RDONLY);
-	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	if (fd == -1)
 	{
 		dprintf(2, "Error: can't read from file %s\n", file_from);
 		exit(98);
 	}
-	if (fd2 == -1)
-	{
-		dprintf(2, "Error: can't write to file %s\n", file_to);
-		exit(99);
-	}
-
 	rd = read(fd, buffer, 1024);
 	if (rd == -1)
 	{
 		dprintf(2, "Error: can't read from file %s\n", file_from);
 		exit(98);
 	}
+
+	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 00664);
+	if (fd2 == -1)
+	{
+		dprintf(2, "Error: can't write to file %s\n", file_to);
+		close(fd);
+		exit(99);
+	}
+
 	while (rd != 0)
 	{
 		wrote = write(fd2, buffer, rd);
 		if (wrote == -1)
 		{
+			close(fd);
 			dprintf(2, "Error: can't write to file %s\n", file_to);
 			exit(99);
 		}
