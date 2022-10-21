@@ -18,8 +18,8 @@ int hash_table_set(hash_table_t *ht, char *key, char *value)
 		free(new);
 		return (0);
 	}
-	new->key = key;
-	new->value = value;
+	new->key = strdup(key);
+	new->value = strdup(value);
 	new->next = NULL;
 	index = hash_djb2((unsigned char *)key) % ht->size;
 
@@ -29,11 +29,14 @@ int hash_table_set(hash_table_t *ht, char *key, char *value)
 		ht->array[index] = new;
 		return (1);
 	}
-	tmp = head->next;
+	tmp = head;
 	while (tmp)
 	{
 		if (!tmp->next)
+		{
 			tmp->next = new;
+			break;
+		}
 		tmp = tmp->next;
 	}
 	return (1);

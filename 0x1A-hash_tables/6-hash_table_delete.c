@@ -11,12 +11,14 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *tmp;
 
 	if (!ht)
-		return ;
+		return;
 	for (i = 0; i < ht->size; i++)
 	{
 		tmp = ht->array[i];
 		if (tmp && !tmp->next)
 		{
+			free(tmp->key);
+			free(tmp->value);
 			free(tmp);
 			continue;
 		}
@@ -38,6 +40,8 @@ void free_linkedlist(hash_node_t **lst)
 	while (node)
 	{
 		tmp = (node)->next;
+		free(node->key);
+		free(node->value);
 		free(node);
 		node = tmp;
 	}
