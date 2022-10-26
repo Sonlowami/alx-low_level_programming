@@ -32,32 +32,62 @@ shash_table_t *shash_table_create(unsigned long int size)
  *
  * Return: 1 on success, 0 on failure
  */
-int shash_table_set(shash_table_t *ht, char *key, char *value)
+int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *node = malloc(sizeof(shash_node_t *));
+	shash_node_t *new, *node;
+	char *k, *val;
 	unsigned long int index;
 
-	if (!ht || !key || !value)
+	if (!ht || !key || *key == '\0' || !value)
 		return (0);
-	/* Construct a node*/
-	node->key = key, node->value = value;
-	node->next = NULL;
-
+	val = strdup(value);
+	if (!val)
+		return (0);
 	index = hash_djb2((unsigned char *)key) % ht->size;
-	if (ht->array[index])
-		insert_in_linkedlist(node, &ht->array[index]);
-	/* check if the hash_table is empty*/
-	else if (!ht->stail)
+	node = ht->array[index];
+	while (node)
 	{
-		ht->array[index] = node;
-		ht->shead = ht->stail = node;
-		node->snext = NULL;
-		return (1);
+		if (strcmp(node->key, key))
+		{
+			free(node->value);
+			node->value = val;
+			return (1);
+		}
+		node = node->next;
 	}
-	ht->stail->snext = node;
-	node->sprev = ht->stail;
-	ht->stail = node;
-	return (1);
+	new = malloc(sizeof(shash_node_t *));
+	k = strdup(key);
+	if (!key || !new)
+	{
+		free(val);
+		(new == NULL) ? free(k) : free(new);
+		return (0);
+	}
+	new->key = k, new->value = val;
+	new->next = ht->array[index];
+	ht->array[index] = new;
+
+	if (!ht->shead)
+	{
+		new->snext = new->sprev = NULL;
+		ht->shead = ht->stail = new;
+	}
+	else
+	{
+		node = ht->shead;
+		while (node)
+		{
+			if (!node->snext)
+			{
+				new->sprev = node;
+				node->snext = new;
+				ht->stail = new;
+				return (1);
+			}
+			node = node->snext;
+		}
+	}
+	return (0);
 }
 /**
  * insert_in_linkedlist - insert in a linked list
