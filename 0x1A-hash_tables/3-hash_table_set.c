@@ -13,31 +13,31 @@ int hash_table_set(hash_table_t *ht, char *key, char *value)
 	unsigned long int index;
 	hash_node_t *tmp, *head;
 
-	if (*key == '\0' || !new)
+	if (*key == '\0' || !ht)
 	{
 		free(new);
 		return (0);
 	}
+	if (!new)
+		return (0);
 	new->key = strdup(key);
 	new->value = strdup(value);
 	new->next = NULL;
 	index = hash_djb2((unsigned char *)key) % ht->size;
 
 	head = (ht->array)[index];
-	if (!head)
-	{
-		ht->array[index] = new;
-		return (1);
-	}
 	tmp = head;
 	while (tmp)
 	{
-		if (!tmp->next)
+		if (!strcmp(tmp->key, key))
 		{
-			tmp->next = new;
-			break;
+			free(tmp->value);
+			tmp->value = new->value;
+			return (1);
 		}
 		tmp = tmp->next;
 	}
+	new->next = ht->array[index];
+	ht->array[index] = new;
 	return (1);
 }
