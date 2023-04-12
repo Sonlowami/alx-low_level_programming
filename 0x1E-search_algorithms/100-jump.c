@@ -20,7 +20,7 @@ int jump_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 	m = sqrt(size);
-	for (i = 0; i < size; i+=m)
+	for (i = 0; i < size; i += m)
 	{
 		if (array[i] >= value)
 		{
@@ -37,7 +37,7 @@ int jump_search(int *array, size_t size, int value)
  * @array: pointer to where the array begins
  * @start: index to start search on
  * @n: index to end search on
- * value: the actual thing we are looking for
+ * @value: the actual thing we are looking for
  *
  * Return: the position of value, or -1 otherwise
  */
@@ -47,7 +47,7 @@ int linear(int *array, size_t start, size_t n, int value)
 
 	if (n == 0 || !array)
 		return (-1);
-	for(i = start; i < n; i++)
+	for (i = start; i < n; i++)
 	{
 		printf("Value ckecked array[%ld]: [%d]\n", i, array[i]);
 		if (array[i] == value)
