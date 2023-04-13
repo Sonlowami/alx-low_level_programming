@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int binary(int *array, size_t start, size_t end, int value);
+int binary(int *array, int start, int end, int value);
 /**
  * advanced_binary - search an element from an array using binary search
  * @array: the array to search
@@ -28,14 +28,14 @@ int advanced_binary(int *array, size_t size, int value)
  *
  * Return: index of the value found, 0 otherwise
  */
-int binary(int *array, size_t start, size_t end, int value)
+int binary(int *array, int start, int end, int value)
 {
-	size_t i, mid = start + (end - start) / 2;
+	int i, mid = start + (end - start) / 2;
 
 	printf("Searching in array: ");
 	for (i = start; i <= end; i++)
 		(i <= end - 1) ? printf("%d, ", array[i]) : printf("%d\n", array[i]);
-	if (start > end)
+	if (start >= end && array[start] != value)
 		return (-1);
 	if (array[mid] == value)
 	{
