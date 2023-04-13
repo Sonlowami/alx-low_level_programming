@@ -17,24 +17,24 @@ int main(void)
     };
 
     printf("Binary search test 0 success or fail? ");
-    (advanced_binary(array[0], 16, 5) == 2) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[0], 16, 5) == 2) ? printf("Success\n") : printf("fail\n");
     printf("Binary search test 0 success or fail? ");
-    (advanced_binary(array[0], 16, -5) == -1) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[0], 16, -5) == -1) ? printf("Success\n") : printf("fail\n");
 
     printf("Binary search test 1 success or fail? ");
-    (advanced_binary(array[1], 1, 8) == -1) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[1], 1, 8) == -1) ? printf("Success\n") : printf("fail\n");
 
     printf("Binary search test 1 success or fail? ");
-    (advanced_binary(array[1], 1, 3) == 0) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[1], 1, 3) == 0) ? printf("Success\n") : printf("fail\n");
 
     printf("Binary search test 2 success or fail? ");
-    (advanced_binary(array[2], 3, 5) == 1) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[2], 3, 5) == 1) ? printf("Success\n") : printf("fail\n");
     printf("Binary search test 2 success or fail? ");
-    (advanced_binary(array[2], 3, 3) == -1) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[2], 3, 3) == -1) ? printf("Success\n") : printf("fail\n");
     printf("Binary search test 3 success or fail? ");
-    (advanced_binary(array[3], 2, -20) == -1) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[3], 2, -20) == -1) ? printf("Success\n") : printf("fail\n");
 
     printf("Binary search test 3 success or fail? ");
-    (advanced_binary(array[3], 2, -3) == 1) ? printf("Success\n") : printf("fail\n");
+    (jump_search(array[3], 2, -3) == 1) ? printf("Success\n") : printf("fail\n");
     return (EXIT_SUCCESS);
 }
