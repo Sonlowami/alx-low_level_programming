@@ -30,16 +30,15 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		while (lead->index < target)
 			lead = lead->next;
 		printf("Value checked at index [%ld] = [%d]\n", lead->index, lead->n);
-		if (lead->n == value)
-			return (lead);
-		else if (lead->n < value)
+		if (lead->n < value)
 			target = jump + lead->index;
-		else if (lead->n > value)
+		else if (lead->n >= value)
 		{
 			printf("Value found between indexes [%ld] and [%ld]\n",
 					lag->index, lead->index);
 			for (; lag != lead; lag = lag->next)
 			{
+				printf("Value checked at index [%ld] = [%d]\n", lag->index, lag->n);
 				if (lag->n == value)
 					return (lag);
 			}
