@@ -47,7 +47,6 @@ int binary_search(int *array, size_t size, int value)
  */
 int binary(int *array, size_t start, size_t end, int value)
 {
-	printf("Value found between indexes [%ld] and [%ld]\n", start, end);
 	while (start <= end && value >= array[start] && value <= array[end])
 	{
 		size_t i, mid = start + (end - start) / 2;
